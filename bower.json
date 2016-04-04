@@ -1,0 +1,24 @@
+{
+  "name": "next-koa-vue",
+  "description": "An app page architecture based on next &amp; koa &amp; vue.",
+  "main": "dist/next-koa-vue.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/next-koa-vue",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "next-koa-vue",
+  "version": "0.0.0",
+  "description": "An app page architecture based on next &amp; koa &amp; vue.",
+  "homepage": "https://github.com/afeiship/next-koa-vue",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.0"
+  }
+}
