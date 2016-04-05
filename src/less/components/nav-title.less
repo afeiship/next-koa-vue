@@ -1,0 +1,64 @@
+@import "../variable";
+@import "../function";
+
+nav {
+    @h          : 44px;
+    width       : 100%;
+    height      : @h;
+    line-height : @h;
+    text-align  : center;
+    position    : relative;
+    background  : @white;
+    font-size   : @font-size;
+    border-bottom   : 1px solid @border-color-des;
+    a {
+        width       : 44px;
+        line-height : @h;
+        text-align  : center;
+        position    : absolute;
+        top         : 0;
+        left        : 0;
+        &.back:before {
+            content : " ";
+            width   : 10px;
+            height  : 10px;
+            display : inline-block;
+            border-top  : 2px solid @content;
+            border-left : 2px solid @content;
+            .transform( rotate( -45deg ) );
+        }
+        &.right {
+            width   : auto;
+            left    : initial;
+            right   : 0;
+            white-space : nowrap;
+            font-size   : 14px;
+            padding-right: 10px;
+        }
+        &.icon{
+            width: @h;
+            height: @h;
+            line-height: @h;
+            left: initial;
+            right: 0;
+            display: inline-block;
+            background-repeat: no-repeat !important;
+        }
+    }
+    p {
+        width       : 100%;
+        height      : @h;
+        line-height : @h;
+        font-size   : 18px;
+    }
+    span {
+        font-size   : 18px;
+    }
+}
+.ios .nav-title::before {
+    content: "";
+    height: 20px;
+    width: 100%;
+    display: block !important;
+    background-color: @white;
+}

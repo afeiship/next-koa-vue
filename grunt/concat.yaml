@@ -1,0 +1,20 @@
+global 	:
+    options 	: 
+        separator 	: ";"
+    src 	: 
+        - "<%= src %>/js/lib/fastclick.js"
+        - "<%= src %>/js/base.js"
+        - "<%= src %>/js/lib/zepto.js"
+        - "<%= src %>/js/lib/iscroll.js"
+        - "<%= src %>/js/lib/handlebars.js"
+        - "<%= src %>/js/lib/require.js"
+        - "<%= src %>/js/requireConfig.js"
+        - "<%= src %>/js/util/**/*.js"
+    dest 	: "<%= dev %>/js/global.js"
+
+mock    :
+    options     :
+        separator   : ""
+    src         : 
+        - "<%= src %>/mock/**/*.js"
+    dest        : <%= dev %>/mock/content.js

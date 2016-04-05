@@ -1,4 +1,13 @@
+.DS_Store
+**/.idea
+**/node_modules
+log
+logs
+dev
+dist
 node_modules
-bower_components
-coverage
-.idea
+.temp
+**/.temp
+**/bower_components
+site/mock
+site/handler/mock.js

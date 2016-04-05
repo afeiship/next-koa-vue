@@ -1,0 +1,6 @@
+all   :
+    src     : 
+        - "<%= src %>/images/sprites/**/*.png"
+    dest    : "<%= dev %>/images/sprites.png"
+    destCss : "<%= dev %>/css/sprites.css"
+    padding : 20

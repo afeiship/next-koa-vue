@@ -1,0 +1,201 @@
+.bg-img( @url , @size , @pos ){
+    background-image  : url( @url );
+    background-size   : @size;
+    background-position   : @pos;
+}
+
+.lottery-container {
+    @color1         : #FF3253;
+    @bg-yellow 		: #FEF2AF;
+    @bg-yellow-light: #FFFADD;
+
+    width: 100%;
+    background-color: #D90D35;
+    .img-banner {
+        width: 100%;
+    }
+
+    ul {
+        width: 90%;
+        padding: 6% 6%;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        left : 5%;
+        .bg-img( "../../images/new-year-2016/imgLight1.png" , 100% 100% , 0 0 );
+        li {
+            width: 33.3333%;
+            float: left;
+            text-align: center;
+
+            .item-inner {
+                height: 97px;
+                line-height: 15px;
+
+                &.bg-yellow {
+                    border: 5px solid @bg-yellow;
+                    background-color: @bg-yellow;
+                }
+                &.bg-yellow-light {
+                    border: 5px solid @bg-yellow-light;
+                    background-color: @bg-yellow-light;
+                }
+                img {
+                    width: 80%;
+                }
+                span {
+                    display: block;
+                    color: #FF8E0B;
+                    font-size: 14px;
+                }
+            }
+
+            &.active .item-inner {
+                border-color: @color1;
+            }
+
+            &.lottery-btn {
+                background-color: #F20005;
+
+                .item-inner {
+                    padding: 5px;
+                    position: relative;
+                    z-index: 5;
+                    span {
+                        color: #FC1C50;
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        padding: 12px 10px 30px;
+                        transition: .25s ease all;
+                        font-size: 26px;
+                        width: 87px;
+                        height: 87px;
+                        line-height: 26px;
+                        display: block;
+                        .bg-img( "../../images/new-year-2016/btnStart.png", 100% 100%, 0 0 );
+                        background-repeat: no-repeat;
+
+                        &:focus, &:active, &.active {
+                            top: 8.5px;
+                            left: 8.5px;
+                            width: 80px;
+                            height: 80px;
+                        }
+                        &.disabled {
+                            color: #ABABAB;
+                            .bg-img( "../../images/new-year-2016/btnEnd.png", 100% 100%, 0 0 );
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active {
+            .bg-img("../../images/new-year-2016/imgLight2.png", 100% 100%, 0 0);
+        }
+    }
+
+    .lottery-tips {
+        width: 80%;
+        color: #FF8E0B;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 14px;
+        padding: 2px;
+        display: none;
+        border-top: 5px solid #F7BF63;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: #FEF2AF;
+
+        .multi {
+            line-height: 18px;
+        }
+
+        .single {
+            line-height: 35px;
+        }
+
+        b {
+            color: @color1;
+            font-weight: normal;
+        }
+    }
+
+    .prize-title,
+    .activity-title {
+        color: @color1;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 30px;
+        text-align: center;
+        .bg-img( "../../images/new-year-2016/imgTitleBackground1.png" , 50% 100% , center center );
+        background-repeat: no-repeat;
+    }
+
+    p {
+        color: #fff;
+        font-size: 14px;
+        padding: 2px 15px 2px 26px;
+        text-indent: -11px;
+        line-height: 18px;
+    }
+
+    .view-back-btn {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+
+        span {
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 3px;
+            background-color: #B20728;
+        }
+    }
+}
+@media only screen and (max-width: 320px) {
+    .lottery-container ul li {
+        .item-inner {
+            height: 82.6719px;
+            
+            img {
+                width: 75%;
+            }
+        }
+
+        &.lottery-btn .item-inner span {
+            width: 72.6719px;
+            height: 72.6719px;
+            font-size: 20px;
+            padding: 6px 7px;
+
+            &:focus, &:active, &.active {
+                width: 65px;
+                height: 65px;
+            }
+        }
+    }
+}
+/* iPhone 6 plus */
+@media only screen and (min-width: 414px) {
+    .lottery-container ul li {
+        .item-inner {
+            height: 107px;
+        }
+
+        &.lottery-btn .item-inner span {
+            width: 97px;
+            height: 97px;
+            padding-top: 16px;
+
+            &:focus, &:active, &.active {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    }
+}

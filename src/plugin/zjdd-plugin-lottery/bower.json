@@ -1,0 +1,20 @@
+{
+  "name": "zjdd-plugin-lottery",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.jade",
+  "keywords": [
+    ""
+  ],
+  "bowerDir": "bower_component",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {},
+  "authors": [
+    "junyi <junyime@qq.com>"
+  ],
+  "kulor": {
+    "requireName": "AreaSelect",
+    "jsFileName": "area-select"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "appName": "zjdd-wap-app",
+  "debug": true,
+  "isMobile": false,
+  "jadeFolderName": "../src",
+  "logFolderName": "../logs",
+  "logPrefix": "zjdd",
+  "tmpLogCount": 50,
+  "busHandlerFolder": "./handler",
+  "serverIp": "api.zaijiadd.com",
+  "serverPort": 80,
+  "busHandlers": {
+    "coupon-redeem-action": "coupon-redeem",
+    "apply-selling-goods-action": "apply-selling-goods",
+    "new-year-2016-lottery": "new-year-2016",
+    "new-year-2016-action": "new-year-2016",
+    "wish-list-vote-action": "wish-list-vote",
+    "wish-list-lottery-raffle": "wish-list-lottery",
+    "wish-list-lottery-usersave": "wish-list-lottery",
+    "user-receive-coupon-action": "user-receive-coupon"
+  },
+  "opt": {
+    "appKey": "91737b62bf1222d7fe253b8d4af384da"
+  }
+}
