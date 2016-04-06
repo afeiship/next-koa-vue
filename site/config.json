@@ -1,9 +1,6 @@
 {
   "appName": "zjdd-wap-app",
-  "isMobile": false,
   "jadeFolderName": "../src",
-  "logFolderName": "../logs",
-  "logPrefix": "zjdd",
   "tmpLogCount": 50,
   "serverIp": "api.zaijiadd.com",
   "serverPort": 80,
