@@ -9,6 +9,7 @@ An app page architecture based on next &amp; koa &amp; vue.
 ##config:
 + Host:127.0.0.1	www.dev.com
 
++ nginx:
 ```conf
 
   server {
