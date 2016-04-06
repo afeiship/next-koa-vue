@@ -43,7 +43,7 @@ module.exports = function (port) {
   /*!
    * 启动jade模板引擎
    */
-  app.use(jade(config, app));
+  app.use(jade());
 
   /*!
    * 缓存一些全局变量
