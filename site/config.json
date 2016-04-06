@@ -1,6 +1,5 @@
 {
   "appName": "zjdd-wap-app",
-  "debug": true,
   "isMobile": false,
   "jadeFolderName": "../src",
   "logFolderName": "../logs",
@@ -9,6 +8,7 @@
   "busHandlerFolder": "./handler",
   "serverIp": "api.zaijiadd.com",
   "serverPort": 80,
+  "sessionMaxAge": false,
   "busHandlers": {
     "coupon-redeem-action": "coupon-redeem",
     "apply-selling-goods-action": "apply-selling-goods",

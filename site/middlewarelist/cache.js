@@ -3,9 +3,6 @@ var Base        = require( "../common/base" ) ,
     path        = require( "path" ) ,
     Cache;
 
-
-
-
 Cache    = Base.extend( function( opt ) {
     this.cacheData      = {
         handlersCache     : {}
