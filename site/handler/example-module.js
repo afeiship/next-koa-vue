@@ -16,8 +16,8 @@ module.exports = Base.extend(function () {
     var method = this.koa.req.method;
     return yield this['do' + method]();
   },
-  doGET: function * () {
-    return yield this.jade.getHTML(
+  doGET: function *() {
+    return this.jade.getHTML(
       {
         dataString: JSON.stringify({})
       },

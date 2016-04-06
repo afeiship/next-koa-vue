@@ -1,71 +1,53 @@
-(function (nx,global) {
+(function (nx, global) {
 
-  var jade = require("jade"),
-    Base = require("../common/base"),
-    cofs = require("co-fs"),
-    _ = require("underscore"),
-    path = require("path"),
-    Jade;
+  var jade = require('jade'),
+    path = require('path'),
+    fs = require('fs');
 
-  var fs = require('fs');
-
-  Jade = Base.extend(function (opt, app) {
-    this.httpCache = {};
-    this.jadeFileFolder = path.join(path.resolve(opt.jadeFolderName), "/");
-    this.koa = false;
-    this.koaApp = app;
-    this.packageJSON = opt;
-  }, {
-    /*!
-     *  序列化一个template到内存中，
-     *  并返还对于的jade加载器
-     *  如果已加载过的template文件 从内存中读取
-     *  @templateName       {string}    jade模板名称
-     *  return              {jadeFn}    一个实例化的jade对象，可直接与json组装
-     */
-    getTemplate: function*(templateName) {
-      var _jadeFilePath,
-        _httpStr,
-        _isFileExists;
-      if (this.httpCache[templateName] === undefined) {
-        _jadeFilePath = this.jadeFileFolder + templateName + ".jade";
-        _isFileExists = fs.existsSync(_jadeFilePath);
-        if (_isFileExists) {
-          _httpStr = yield cofs.readFile(_jadeFilePath, "utf-8");
-          this.httpCache[templateName] = jade.compile(_httpStr, {
-            filename: this.jadeFileFolder + templateName
-          });
-        } else {
-          this.httpCache[templateName] = false;
-        }
-      }
-      return this.httpCache[templateName] || false;
+  var Jade = nx.declare({
+    statics: {
+      cache: {}
     },
-    /*!
-     *  组装一个json到jade模板中
-     *  @json           {json}      json数据
-     *  @templateName   {string}    jade模板名称
-     *  return          {string}    html字符串
-     */
-    getHTML: function*(json, templateName) {
-      var _jadeFn;
-      if (typeof json === "string") {
-        templateName = json;
-        json = {};
+    methods: {
+      init: function (inApp) {
+        this._app = inApp;
+      },
+      template: function (inName) {
+        var config = this._app.config;
+        var tmpl = Jade.cache[inName],
+          jadeStr = '',
+          filePath;
+
+        if (tmpl == null) {
+          filePath = path.join(config.pwd, config.jadeFolderName + '/', inName + '.jade');
+          if (fs.existsSync(filePath)) {
+            jadeStr = fs.readFileSync(filePath);
+            tmpl = Jade.cache[inName] = jade.compile(jadeStr, {
+              filename: filePath
+            });
+          }
+        }
+        return tmpl;
+      },
+      getHTML: function (json, templateName) {
+        var _jadeFn;
+        if (typeof json === 'string') {
+          templateName = json;
+          json = {};
+        }
+        _jadeFn = this.template(templateName);
+        return _jadeFn ? _jadeFn(json) : '';
       }
-      _jadeFn = yield this.getTemplate(templateName);
-      return _jadeFn ? _jadeFn(json) : "";
     }
   });
 
-  module.exports = function (opt, app) {
-    var _jade = new Jade(opt, app);
+  module.exports = function () {
     return function *(next) {
-      this.jade = _jade;
+      this.jade = new Jade(this);
       this.jade.koa = this;
       yield next;
     }
   };
 
 
-}(nx,nx.GLOBAL));
+}(nx, nx.GLOBAL));
