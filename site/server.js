@@ -1,45 +1,27 @@
 var koa = require('koa'),
-  _ = require('underscore'),
-  cofs = require('co-fs'),
   url = require('url'),
   path = require('path'),
   session = require('koa-generic-session'),
   koaRedis = require('koa-redis'),
   koaBody = require('koa-body'),
-  koaError = require('koa-onerror'),
-  log = require('./middlewarelist/log'),
-  env = require('./middlewarelist/env'),
+  boot = require('./middlewarelist/boot'),
   jade = require('./middlewarelist/jade'),
   cache = require('./middlewarelist/cache'),
   redis = require('./middlewarelist/redis'),
   business = require('./middlewarelist/business'),
-  config = require('./config.json'), // 业务流程缓存
-  app;
+  config = require('./config.json');
 
 /**
  * @port {number} 监听端口号
  */
 module.exports = function (port) {
+
+
+  //init koa & set config:
+  var app;
   app = koa();
-  // 方便多开发环境进行切换
-  if (app.env != 'production') {
-    if (app.env == 'pre') {
-      config.serverIp = 'pre.' + config.serverIp;
-    } else {
-      config.jadeFolderName = '../src';
-      config.debug = true;
-      app.use(env(config));
-    }
-  }
 
-  // 初始化相关的配置信息
-  config.busHandlerFolder = process.cwd() + '/' + config.busHandlerFolder + '/';
-
-  app.use(log(config));
-
-  koaError(app);
-
-  app.use(redis(config.redis));
+  app.use(boot(config));
 
   /*!
    * 启用session服务
