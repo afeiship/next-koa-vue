@@ -5,10 +5,10 @@
   "logFolderName": "../logs",
   "logPrefix": "zjdd",
   "tmpLogCount": 50,
-  "busHandlerFolder": "./handler",
   "serverIp": "api.zaijiadd.com",
   "serverPort": 80,
   "sessionMaxAge": false,
+  "busHandlerFolder": "./handler",
   "busHandlers": {
     "coupon-redeem-action": "coupon-redeem",
     "apply-selling-goods-action": "apply-selling-goods",

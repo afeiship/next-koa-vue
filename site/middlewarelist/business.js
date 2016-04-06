@@ -1,6 +1,7 @@
 var url = require('url');
-var cofs = require('co-fs');
+var fs = require('fs');
 var path = require('path');
+
 module.exports = function (inConfig) {
   return function* (next) {
     var originalUrl = url.parse(this.originalUrl),
@@ -11,19 +12,20 @@ module.exports = function (inConfig) {
       handlerFilePath,
       requireClass,
       isFileExists;
-    console.log(originalUrl);
     // 获取具体对应的业务，并实例化执行，对于已实例化的业务，直接进行业务处理
     if (!handlersCache[handler] || inConfig.debug) {
-      isFileExists = yield cofs.exists(inConfig.busHandlerFolder + handler + '.js');
+      isFileExists = fs.existsSync(inConfig.busHandlerFolder + handler + '.js');
+      console.log(isFileExists);
+
       if (isFileExists) {
         handlerFilePath = inConfig.busHandlerFolder + handler;
+        console.log(path.resolve(handlerFilePath));
       } else {
         return this.status = 404;
       }
 
       requireClass = require(handlerFilePath);
 
-      console.log(handlerFilePath);
       handlersCache[handler] = new requireClass(this);
     }
 
@@ -46,4 +48,8 @@ module.exports = function (inConfig) {
     yield next;
   };
 };
+
+
+
+
 
