@@ -33,7 +33,6 @@
   module.exports = function () {
     return function *(next) {
       this.jade = new Jade(this);
-      this.jade.koa = this;
       yield next;
     }
   };

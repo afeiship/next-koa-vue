@@ -1,4 +1,5 @@
-require('./common/next-js-core2')(require);
+require('next-js-core2')(require);
+
 (function (nx, global) {
 
   var env = process.env.NODE_ENV,
