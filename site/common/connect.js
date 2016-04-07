@@ -14,15 +14,6 @@ Connect = Base.extend(function (koa) {
     }, this));
   }
 }, {
-  keepCookieToServer: function (res) {
-    if (this.koa.session && res.headers["set-cookie"] && res.headers["set-cookie"][0]) {
-      if (!this.koa.session.serverCookie) {
-        this.koa.session.serverCookie = res.headers["set-cookie"][0];
-      } else if (this.koa.session.serverCookie !== res.headers["set-cookie"][0]) {
-        this.koa.session.serverCookie = null;
-      }
-    }
-  },
   /*!
    *  获取connect请求的headers参数
    *  @url        {string}
@@ -60,7 +51,6 @@ Connect = Base.extend(function (koa) {
       _url;
     _req = http.request(_self.getConnectOpts(url, "POST", opt), function (res) {
       var _data = "";
-      _self.keepCookieToServer(res);
       if (res.statusCode === 200) {
         res.on("data", function (chunk) {
           _data += chunk;
@@ -117,7 +107,6 @@ Connect = Base.extend(function (koa) {
     }
     url = "/" + url;
     _req = http.request(_self.getConnectOpts(url, "GET", opt), function (res) {
-      _self.keepCookieToServer(res);
       _getData(res);
     });
     _req.on("error", function (e) {
