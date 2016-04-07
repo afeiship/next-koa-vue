@@ -22,7 +22,7 @@
           return this.status = 404;
         } else {
           HandlerClass = require(filePath);
-          Business.handlerCache[handlerName] = this._handlerClass = new HandlerClass(this);
+          Business.handlerCache[handlerName] = this._handlerClass = new HandlerClass(this._app);
         }
       },
       resolveResponse: function * () {
