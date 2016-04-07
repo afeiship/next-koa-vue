@@ -2,7 +2,7 @@
   "appName": "zjdd-wap-app",
   "jadeFolderName": "../src",
   "tmpLogCount": 50,
-  "serverIp": "api.zaijiadd.com",
+  "serverIp": "test-wei.api-seller.zaijiadd.com",
   "serverPort": 80,
   "sessionMaxAge": false,
   "busHandlerFolder": "./handler",

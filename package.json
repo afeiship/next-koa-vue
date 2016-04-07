@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "co-fs": "^1.2.0",
+    "iconv-lite": "^0.4.13",
     "jade": "^1.9.2",
     "koa": "^0.20.0",
     "koa-body": "^1.2.1",
