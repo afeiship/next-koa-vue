@@ -9,6 +9,7 @@ module.exports = nx.declare({
   methods: {
     init: function (inKoa) {
       this.koa = inKoa;
+      this.jade = inKoa.jade;
     },
     getConnectOpts: function (url, type, opt) {
       if (typeof opt !== "object") {
@@ -113,11 +114,6 @@ module.exports = nx.declare({
     },
     getQuery: function () {
       return this.koa.req.method === "GET" ? this.koa.query : this.koa.request.body;
-    },
-    setKoa: function (koa, handlerName) {
-      this.koa = koa;
-      this.jade = koa.jade;
-      return this;
     }
   }
 });
