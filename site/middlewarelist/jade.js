@@ -22,14 +22,10 @@
         }
         return tmpl;
       },
-      getHTML: function (json, templateName) {
-        var _jadeFn;
-        if (typeof json === 'string') {
-          templateName = json;
-          json = {};
-        }
-        _jadeFn = this.template(templateName);
-        return _jadeFn ? _jadeFn(json) : '';
+      getHTML: function (inName, inData) {
+        var jadeFn = this.template(inName);
+        var data = inData || {};
+        return jadeFn(data) || '';
       }
     }
   });

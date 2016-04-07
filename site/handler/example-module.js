@@ -18,10 +18,10 @@ module.exports = Base.extend(function () {
   },
   doGET: function *() {
     return this.jade.getHTML(
+      'example-module',
       {
         dataString: JSON.stringify({})
-      },
-      'example-module'
+      }
     );
   },
   doPOST: function * () {
