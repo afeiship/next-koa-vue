@@ -4,8 +4,7 @@
  * URL： http://scaffold.zaijiadd.com/example-module.php?zjtoken=test`test`1
  * WiKi：none.wiki.com
  */
-var Base = require('../common/base'),
-  Connect = require('../common/connect'),
+var Connect = require('../common/connect'),
   _ = require('underscore');
 
 module.exports = nx.declare({

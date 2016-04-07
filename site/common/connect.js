@@ -1,5 +1,4 @@
-var Base = require("./base"),
-  http = require("http"),
+var http = require("http"),
   _ = require("underscore"),
   QueryString = require("querystring"),
   path = require("path"),
@@ -8,6 +7,9 @@ var Base = require("./base"),
 
 module.exports = nx.declare({
   methods: {
+    init: function (inKoa) {
+      this.koa = inKoa;
+    },
     getConnectOpts: function (url, type, opt) {
       if (typeof opt !== "object") {
         opt = {}
