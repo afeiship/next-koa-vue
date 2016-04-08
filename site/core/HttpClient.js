@@ -1,4 +1,4 @@
-(function (nx,global) {
+(function (nx, global) {
 
   var http = require('http'),
     _ = require('underscore'),
@@ -19,7 +19,7 @@
         var dataStr = QueryString.stringify(inData);
         var result, called, callback;
         var url = type === 'GET' ? (inUrl + '?' + dataStr) : inUrl;
-        var options = this.getRequestOptions(url, type, inOptions);
+        var options = this.normalizeOptions(url, type, inOptions);
         var done = function () {
           if (!called && result !== undefined && callback) {
             callback.call(this, null, JSON.parse(result));
@@ -59,7 +59,7 @@
       POST: function (inUrl, inPostData, inOptions) {
         return this.REQUEST(inUrl, 'POST', inPostData, inOptions);
       },
-      getRequestOptions: function (inUrl, inType, inOptions) {
+      normalizeOptions: function (inUrl, inType, inOptions) {
         var options = inOptions || {};
         var config = this.koa.config;
         return {
@@ -78,4 +78,4 @@
     }
   });
 
-}(nx,nx.GLOBAL));
+}(nx, nx.GLOBAL));
