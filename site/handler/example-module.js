@@ -1,4 +1,4 @@
-(function (nx,global) {
+(function (nx, global) {
 
   /**
    * example-module
@@ -37,7 +37,7 @@
       getProfitList: function * () {
         //http://api.zaijiadd.com/v1/store/{store_id}/profit
         var query = this.getQuery();
-        return yield this.REQUEST('/v1/store/7/coffers_log','GET',null, {
+        return yield this.GET('/v1/store/7/coffers_log', null, {
           headers: {
             zjtoken: decodeURIComponent(query.zjtoken)
           }
@@ -47,4 +47,4 @@
   });
 
 
-}(nx,nx.GLOBAL));
+}(nx, nx.GLOBAL));
