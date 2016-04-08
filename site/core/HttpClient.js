@@ -57,7 +57,12 @@
         return this.REQUEST(inUrl, 'GET', inParamData, inOptions);
       },
       POST: function (inUrl, inPostData, inOptions) {
-        return this.REQUEST(inUrl, 'POST', inPostData, inOptions);
+        var options = nx.mix({
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }, inOptions);
+        return this.REQUEST(inUrl, 'POST', inPostData, options);
       },
       normalizeOptions: function (inUrl, inType, inOptions) {
         var options = inOptions || {};
@@ -67,9 +72,7 @@
           port: options.port || config.serverPort,
           path: inUrl,
           method: inType || 'GET',
-          headers: nx.mix({
-            //'Content-Type': 'application/x-www-form-urlencoded'
-          }, options.headers || {})
+          headers: options.headers || {}
         };
       },
       onRequestError: function (inRes) {
