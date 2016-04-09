@@ -1,6 +1,0 @@
-dev:
-  - <%= dev %>
-temp:
-  - <%= temp %>
-dist:
-  - <%= dist %>

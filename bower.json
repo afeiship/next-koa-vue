@@ -1,0 +1,23 @@
+{
+  "name": "next-koa-vue",
+  "description": "An app page architecture based on next & koa & vue.",
+  "main": "package.json",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next",
+    "koa",
+    "vue"
+  ],
+  "homepage": "https://github.com/afeiship/next-koa-vue",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
