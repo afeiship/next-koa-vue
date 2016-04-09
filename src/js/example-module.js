@@ -13,7 +13,7 @@ require(['ModalView', 'UrlHash', 'DataView'], function (ModalView, UrlHash, Data
     initIScroll: function () {
       self._iscroll = new IScroll(".wrapper", {
         scrollbars: true,
-        mouseWheel: true,
+        mouseWheel: false,
         shrinkScrollbars: "scale",
         fadeScrollbars: true,
         interactiveScrollbars: true
