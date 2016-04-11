@@ -1,0 +1,12 @@
+/**example-module Start**/
+html, body {
+  height: 100%;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/**example-module  End**/

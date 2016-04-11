@@ -1,46 +1,29 @@
-'use strict';
+(function () {
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-
-var browserSync = require('browser-sync');
-
-var $ = require('gulp-load-plugins')();
-
-var wiredep = require('wiredep').stream;
-var _ = require('lodash');
-
-gulp.task('styles', function () {
-  var sassOptions = {
-    style: 'expanded'
-  };
-
-  var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/app/**/*.scss'),
-    path.join('!' + conf.paths.src, '/app/index.scss')
-  ], { read: false });
-
-  var injectOptions = {
-    transform: function(filePath) {
-      filePath = filePath.replace(conf.paths.src + '/app/', '');
-      return '@import "' + filePath + '";';
-    },
-    starttag: '// injector',
-    endtag: '// endinjector',
-    addRootSlash: false
-  };
+  var path = require('path');
+  var gulp = require('gulp');
+  var del = require('del');
+  var conf = require('./conf');
+  var sass = require('gulp-sass');
 
 
-  return gulp.src([
-    path.join(conf.paths.src, '/app/index.scss')
-  ])
-    .pipe($.inject(injectFiles, injectOptions))
-    .pipe(wiredep(_.extend({}, conf.wiredep)))
-    .pipe($.sourcemaps.init())
-    .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
-    .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))
-    .pipe(browserSync.reload({ stream: true }));
-});
+  gulp.task('sass', function () {
+    console.log(path.join(
+      conf.paths.src, '/sass/*.scss'
+    ));
+    return gulp.src(path.join(
+      conf.paths.src, '/sass/*.scss'
+      ))
+      .pipe(sass(conf.sassOptions).on('error', sass.logError))
+      .pipe(gulp.dest(
+        path.join(conf.paths.dist, '/css')
+      ));
+  });
+
+
+  gulp.task('sass:watch', function () {
+    gulp.watch(conf.paths.src, '/sass/*.scss', ['sass'])
+  });
+
+
+}());
