@@ -6,24 +6,12 @@ html
     meta( http-equiv = "X-UA-Compatible" , content = "IE=Edge" )
     meta( name="App-Config" , content="fullscreen=yes,useHistoryState=yes,transition=yes")
     meta( name="viewport" , content="width=device-width , initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
-    //build:css({.tmp/serve,src}) styles/vendor.css
-    //bower:css
-    //run `gulp inject` to automatically populate bower styles dependencies
-    //endbower
-    //endbuild
+    link(type = "text/css" , rel = "stylesheet" , href = "styles/vendor.css")
     block head
+
   body
     block body
 
   block script
-    //build:js(src) scripts/vendor.js
-    //bower:js
-    //run `gulp inject` to automatically populate bower script dependencies
-    //endbower
-    //endbuild
-    //
-    //build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js
-    //inject:js
-    //js files will be automatically insert here
-    //endinject
+    script(type="text/javascript",src="scripts/vendor.js")
 

@@ -1,13 +1,13 @@
 {
-  "appName": "zjdd-wap-app",
-  "jadeFolderName": "../src",
+  "appName": "next-koa-vue",
+  "jadeFolderName": "../dev",
   "tmpLogCount": 50,
   "serverIp": "test-wei.api-seller.zaijiadd.com",
   "serverPort": 80,
   "sessionMaxAge": false,
   "busHandlerFolder": "./handler",
   "busHandlers": {
-    "coupon-redeem-action": "coupon-redeem",
+    "coupon-redeem-action": "coupon-redeem"
   },
   "opt": {
     "appKey": "91737b62bf1222d7fe253b8d4af384da"

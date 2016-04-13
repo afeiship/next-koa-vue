@@ -21,6 +21,7 @@ require(['ModalView', 'UrlHash', 'DataView'], function (ModalView, UrlHash, Data
     },
     _nav_back_click: function () {
       history.go(-1);
+      console.log('test!');
     }
   }).addViewEvent({
     '.nav-title .back::click': '_nav_back_click'
