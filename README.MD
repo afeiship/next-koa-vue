@@ -31,5 +31,5 @@ An app page architecture based on next &amp; koa &amp; vue.
 + cd ~/github/next-koa-vue
 + /usr/local/bin/node site/init.js 8989
 + npm install
-+ grunt
++ gulp
 
