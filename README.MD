@@ -23,7 +23,7 @@ An app page architecture based on next &amp; koa &amp; vue.
       }
 
   	location ~* \.php {
-  		proxy_pass 	http://127.0.0.1:`8989`;
+  		proxy_pass 	http://127.0.0.1:8989;
   	}
   }
 
