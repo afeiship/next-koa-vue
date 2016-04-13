@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "serve": "node site/setup.js --harmony 8989",
-    "grunt": "grunt"
+    "gulp": "gulp"
   },
   "author": {
     "name": "afei"
