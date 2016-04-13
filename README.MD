@@ -23,13 +23,13 @@ An app page architecture based on next &amp; koa &amp; vue.
       }
 
   	location ~* \.php {
-  		proxy_pass 	http://127.0.0.1:8989;
+  		proxy_pass 	http://127.0.0.1:`8989`;
   	}
   }
 
 ```
 + cd ~/github/next-koa-vue
-+ /usr/local/bin/node site/init.js 8989
++ /usr/local/bin/node site/init.js `8989`
 + npm install & bower install
 + gulp
 
