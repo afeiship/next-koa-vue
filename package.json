@@ -1,7 +1,7 @@
 {
   "name": "next-koa-vue",
   "description": "An app page architecture based on next & koa & vue.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "serve": "node site/setup.js --harmony 8989",
     "gulp": "gulp"

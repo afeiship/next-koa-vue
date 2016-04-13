@@ -33,3 +33,7 @@ An app page architecture based on next &amp; koa &amp; vue.
 + npm install & bower install
 + gulp
 
+
+##isusues:
++ need css autoprefixer
++ svg to font
