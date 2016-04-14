@@ -40,6 +40,7 @@ An app page architecture based on next &amp; koa &amp; vue.
 + jade-mixin
 + gulp serve
 + browser sync
++ responsive & rem layout
 
 
 ##resource:
