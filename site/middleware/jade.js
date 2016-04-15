@@ -15,9 +15,12 @@
       template: function (inName) {
         var config = this._app.config;
         var tmpl,
-          filePath = path.join(config.pwd, config.jadeFolderName + '/', inName + '.jade');
+          filePath = path.join(config.pwd, config.folderName + '/', inName + '.jade');
         if (fs.existsSync(filePath)) {
-          tmpl = Jade.cache[inName] = jade.compileFile(filePath);
+          tmpl = Jade.cache[inName] = jade.compileFile(filePath, {
+            cache: config.cache,
+            pretty: config.pretty
+          });
         }
         return tmpl;
       },

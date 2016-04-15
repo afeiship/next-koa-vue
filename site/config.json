@@ -1,6 +1,11 @@
 {
   "appName": "next-koa-vue",
   "jadeFolderName": "../dev",
+  "jadeOptions": {
+    "folderName": "../dev",
+    "pretty": true,
+    "cache": false
+  },
   "tmpLogCount": 50,
   "serverIp": "test-wei.api-seller.zaijiadd.com",
   "serverPort": 80,
