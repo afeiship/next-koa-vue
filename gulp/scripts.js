@@ -11,7 +11,9 @@
 
   gulp.task('scripts-vendor-dev', function () {
     var jsFilter = gulpFilter('*.js');
-    return gulp.src(mainBowerFiles())
+    var bowerFiles = mainBowerFiles();
+    bowerFiles.push(path.join(conf.paths.src, '/scripts/vendor/*.js'));
+    return gulp.src(bowerFiles)
       .pipe(jsFilter)
       .pipe(concat('vendor.js'))
       .pipe(gulp.dest(path.join(conf.paths.dev, '/scripts')));
