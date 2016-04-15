@@ -8,6 +8,7 @@
   var sass = require('gulp-sass');
   var wiredep = require('wiredep').stream;
   var importCss = require('gulp-import-css');
+  var autoprefixer = require('gulp-autoprefixer');
 
 
   gulp.task('styles-dist', function () {
@@ -19,6 +20,10 @@
       }))
       .pipe(importCss({}))
       .pipe(sass(conf.sassOptions).on('error', sass.logError))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: true
+      }))
       .pipe(gulp.dest(
         path.join(conf.paths.dist, '/styles')
       ));
@@ -31,9 +36,12 @@
       .pipe(wiredep({
         directory: 'bower_components'
       }))
-
       .pipe(sass(conf.sassOptions).on('error', sass.logError))
       .pipe(importCss({}))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
       .pipe(gulp.dest(
         path.join(conf.paths.dev, '/styles')
       ));

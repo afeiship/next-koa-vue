@@ -35,7 +35,7 @@ An app page architecture based on next &amp; koa &amp; vue.
 
 
 ##issues:
-+ need css autoprefixer
++ need css autoprefixer       [2016-04-15:ok]
 + svg to font
 + jade-mixin
 + gulp serve
