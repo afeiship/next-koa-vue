@@ -47,4 +47,5 @@ An app page architecture based on next &amp; koa &amp; vue.
 + http://mahua.jser.me/
 
 ##bug:
-+ jade will note sync with jade-watch-dev
++ jade will note sync with jade-watch-dev [2016-04-15 ok]
++ nginx can not download font(.ttf/.woff/...)

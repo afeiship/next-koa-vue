@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "FeiMobileFont";
+	src: url('../fonts/FeiMobileFont.eot');
+	src: url('../fonts/FeiMobileFont.eot?#iefix') format('eot'),
+		url('../fonts/FeiMobileFont.woff2') format('woff2'),
+		url('../fonts/FeiMobileFont.woff') format('woff'),
+		url('../fonts/FeiMobileFont.ttf') format('truetype'),
+		url('../fonts/FeiMobileFont.svg#FeiMobileFont') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "FeiMobileFont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == king-hat {
+		$char: "\E001";
+	}
+	@if $filename == power {
+		$char: "\E002";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-king-hat {
+	@include icon(king-hat);
+}
+.icon-power {
+	@include icon(power);
+}
