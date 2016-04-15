@@ -24,6 +24,7 @@
     "vue": "^1.0.21",
     "webkit-scss-material": "webkit-css-material#*",
     "bootstrap": "^3.3.6",
-    "zepto": "^1.1.6"
+    "zepto": "^1.1.6",
+    "next-js-core2": "*"
   }
 }

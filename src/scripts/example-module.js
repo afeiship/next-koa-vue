@@ -1,31 +1,8 @@
-require(['ModalView', 'UrlHash', 'DataView'], function (ModalView, UrlHash, DataView) {
-  var self,
-    urlHash = new UrlHash().getHash();
+(function (nx, global) {
 
-  self = new ModalView('example-module', $(document.body), function () {
-    self.initComponents();
+  nx.require([], function () {
+    console.log('init page!');
   });
 
-  self.addModalEvent({
-    initComponents:function(){
-      self.initIScroll();
-    },
-    initIScroll: function () {
-      self._iscroll = new IScroll(".wrapper", {
-        scrollbars: true,
-        mouseWheel: false,
-        shrinkScrollbars: "scale",
-        fadeScrollbars: true,
-        interactiveScrollbars: true
-      });
-    },
-    _nav_back_click: function () {
-      history.go(-1);
-      console.log('test!');
-    }
-  }).addViewEvent({
-    '.nav-title .back::click': '_nav_back_click'
-  }).init();
 
-  return self;
-});
+}(nx, nx.GLOBAL));

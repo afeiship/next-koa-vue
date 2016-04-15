@@ -45,3 +45,6 @@ An app page architecture based on next &amp; koa &amp; vue.
 
 ##resource:
 + http://mahua.jser.me/
+
+##bug:
++ jade will note sync with jade-watch-dev
