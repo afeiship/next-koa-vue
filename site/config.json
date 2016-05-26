@@ -7,12 +7,12 @@
     "cache": false
   },
   "tmpLogCount": 50,
-  "serverIp": "test-wei.api-seller.zaijiadd.com",
+  "serverIp": "test.demo.com",
   "serverPort": 80,
   "sessionMaxAge": false,
   "busHandlerFolder": "./handler",
   "busHandlers": {
-    "coupon-redeem-action": "coupon-redeem"
+    
   },
   "opt": {
     "appKey": "91737b62bf1222d7fe253b8d4af384da"
