@@ -2,8 +2,7 @@
 
   /**
    * example-module
-   * 商家版通用token test`test`1
-   * URL： http://scaffold.zaijiadd.com/example-module.php?zjtoken=test`test`1
+   * URL： http://scaffold.demo.com/example-module.php?zjtoken=test`test`1
    * WiKi：none.wiki.com
    */
   var HandlerBase = require('../core/HandlerBase'),
@@ -35,7 +34,7 @@
         }
       },
       getProfitList: function * () {
-        //http://api.zaijiadd.com/v1/store/{store_id}/profit
+        //http://api.demo.com/v1/store/{store_id}/profit
         var query = this.getQuery();
         return yield this.GET('/v1/store/7/coffers_log', null, {
           headers: {
