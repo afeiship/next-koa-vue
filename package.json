@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "co-fs": "^1.2.0",
+    "co-redis": "^2.1.0",
     "iconv-lite": "^0.4.13",
     "jade": "^1.9.2",
     "koa": "^0.20.0",
@@ -19,6 +20,7 @@
     "koa-redis": "^1.0.0",
     "next-js-core2": "^1.0.15",
     "node-xhr-mock": "^0.0.1",
+    "redis": "^2.6.1",
     "underscore": "^1.8.3",
     "url": "^0.10.3"
   },

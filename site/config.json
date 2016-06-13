@@ -12,9 +12,14 @@
   "sessionMaxAge": false,
   "busHandlerFolder": "./handler",
   "busHandlers": {
-    
   },
   "opt": {
     "appKey": "91737b62bf1222d7fe253b8d4af384da"
+  },
+  "redis": {
+    "host": "xxx.m.zzz.yyy.aliyuncs.com",
+    "password": "test-pass",
+    "port": 6379,
+    "prefix": "xyz:wfe-"
   }
 }

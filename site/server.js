@@ -5,10 +5,11 @@ var koa = require('koa'),
   boot = require('./middleware/boot'),
   jade = require('./middleware/jade'),
   business = require('./middleware/business'),
+  redis = require('./middleware/redis'),
   config = require('./config.json');
 
 /**
- * @port {number} 监听端口号
+ * @port {number} port number:
  */
 module.exports = function (port) {
 
@@ -22,7 +23,9 @@ module.exports = function (port) {
 
   app.use(jade());
 
-  app.use(business(config));
+  app.use(business());
+
+  app.use(redis());
 
   app.listen(port);
 
