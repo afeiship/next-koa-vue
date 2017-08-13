@@ -2,7 +2,7 @@
   "appName": "next-koa-vue",
   "jadeFolderName": "../dev",
   "jadeOptions": {
-    "folderName": "../dev",
+    "folderName": "src",
     "pretty": true,
     "cache": false
   },

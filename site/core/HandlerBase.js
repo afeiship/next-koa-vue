@@ -3,7 +3,7 @@
   var HttpClient = require('./HttpClient');
 
   module.exports = nx.declare({
-    extend: HttpClient,
+    extends: HttpClient,
     methods: {
       getMethod: function () {
         return (this.koa.req.method).toUpperCase();

@@ -13,9 +13,10 @@
         this._app = inApp;
       },
       template: function (inName) {
+
         var config = this._app.config;
         var tmpl,
-          filePath = path.join(config.pwd, config.folderName + '/', inName + '.jade');
+          filePath = path.join(config.pwd, config.jadeOptions.folderName, inName + '.jade');
         if (fs.existsSync(filePath)) {
           tmpl = Jade.cache[inName] = jade.compileFile(filePath, {
             cache: config.cache,

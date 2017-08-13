@@ -16,8 +16,9 @@
       loadHandlerClass: function () {
         var config = this._app.config;
         var handlerName = config.handlerName;
-        var filePath = path.join(config.pwd, config.busHandlerFolder, handlerName + '.js');
+        var filePath = path.join(config.pwd, 'site', config.busHandlerFolder, handlerName + '.js');
         var HandlerClass;
+
         if (!fs.existsSync(filePath)) {
           return this.status = 404;
         } else {
@@ -25,12 +26,12 @@
           Business.handlerCache[handlerName] = this._handlerClass = new HandlerClass(this._app);
         }
       },
-      resolveResponse: function * () {
+      resolveResponse: function *() {
         var app = this._app;
         try {
           app.body = yield this._handlerClass.doJob() || '';
         } catch (_) {
-          //console.log(_);
+          console.log(_);
           app.status = 500;
           app.statusText = '[Node server error:500]';
         }
@@ -40,7 +41,7 @@
 
 
   module.exports = function () {
-    return function * (next) {
+    return function *(next) {
       var business = new Business(this);
       business.loadHandlerClass();
       yield business.resolveResponse();

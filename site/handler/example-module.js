@@ -9,14 +9,14 @@
     _ = require('underscore');
 
   module.exports = nx.declare({
-    extend: HandlerBase,
+    extends: HandlerBase,
     methods: {
       doJob: function *() {
         var method = this.koa.req.method;
         return yield this['do' + method]();
       },
       doGET: function *() {
-        var list = yield this.getProfitList();
+        var list = yield this.__getProfitList();
         return this.jade.getHTML(
           'example-module',
           {
@@ -32,6 +32,12 @@
         return yield function () {
           return 1;
         }
+      },
+      __getProfitList: function *(){
+        return yield [
+          'item1',
+          'item2'
+        ];
       },
       getProfitList: function * () {
         //http://api.demo.com/v1/store/{store_id}/profit
