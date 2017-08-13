@@ -9,11 +9,11 @@
 
   gulp.task('images-dev', function () {
     return gulp.src([path.join(conf.paths.src, '/images/**/*')])
-      .pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()]
-      }))
+      // .pipe(imagemin({
+      //   progressive: true,
+      //   svgoPlugins: [{removeViewBox: false}],
+      //   use: [pngquant()]
+      // }))
       .pipe(gulp.dest(path.join(conf.paths.dev, '/images')));
   });
 

@@ -3,8 +3,9 @@
   "description": "An app page architecture based on next & koa & vue.",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node site/init.js --harmony 8989",
-    "build": "gulp"
+    "serve": "node site/init.js --harmony 8989",
+    "dev": "gulp",
+    "build":"gulp"
   },
   "author": {
     "name": "afei"

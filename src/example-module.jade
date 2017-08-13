@@ -2,19 +2,20 @@ extends layout/default
 
 block head
   title=title
-  link(type = "text/css" , rel = "stylesheet" , href = "styles/example-module.css")
+  link(type = "text/css" , rel = "stylesheet" , href = "./styles/example-module.css")
 
 block body
   .nav-title
     nav
       a.back
-      p example-module1232213-fei12321
+      p example-module1232213-fei12321-hello-1234
 
   .example-module Start your Jade code herer!
     i.icon-king-hat
+    img(src="images/detail-pic.png",width='100%')
 
 
 
 block script
-  script var globalData = !{dataString};
-  script(type="text/javascript",src="scripts/example-module.js")
+  script var rawData = !{dataString};
+  script(type="text/javascript",src="./scripts/example-module.js")

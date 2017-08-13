@@ -1,7 +1,7 @@
 (function (nx, global) {
 
   nx.require([], function () {
-    console.log('init page!');
+    console.log('init page!!');
   });
 
 
