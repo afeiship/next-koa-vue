@@ -10,23 +10,24 @@ An app page architecture based on next &amp; koa &amp; vue.
 + Host:127.0.0.1	www.dev.com
 
 + nginx:
-> DO NOT USE `[WRONG]:~/github/next-koa-vue/dev` INSTEAD OF `[RIGHT]:/Users/feizheng/github/next-koa-vue/dev`
+  > DO NOT USE `[WRONG]:~/github/next-koa-vue/dev` 
+  
+  > INSTEAD OF `[RIGHT]:/Users/feizheng/github/next-koa-vue/dev`
 ```conf
-  server {
-  	listen 		80;
-  	server_name 	www.dev.com;
-  	root 		/Users/feizheng/github/next-koa-vue/dev;
-      location ~* \ {
-          add_header  Cache-Control private;
-          add_header  Cache-Control no-store;
-          expires -1;
-      }
-
-  	location ~* \.php {
-  		proxy_pass 	http://127.0.0.1:8989;
-  	}
+server {
+  listen 		80;
+  server_name 	www.dev.com;
+  root 		/Users/feizheng/github/next-koa-vue/dev;
+  location ~* \ {
+      add_header  Cache-Control private;
+      add_header  Cache-Control no-store;
+      expires -1;
   }
 
+  location ~* \.php {
+    proxy_pass 	http://127.0.0.1:8989;
+  }
+}
 ```
 + cd ~/github/next-koa-vue
 + /usr/local/bin/node site/init.js `8989`
