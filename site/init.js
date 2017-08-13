@@ -1,4 +1,5 @@
-require('next-js-core2')(require);
+var nx = require('next-js-core2');
+require('next-umd')(require);
 
 (function (nx, global) {
 

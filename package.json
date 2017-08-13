@@ -3,8 +3,8 @@
   "description": "An app page architecture based on next & koa & vue.",
   "version": "1.0.0",
   "scripts": {
-    "serve": "node site/setup.js --harmony 8989",
-    "gulp": "gulp"
+    "dev": "node site/init.js --harmony 8989",
+    "build": "gulp"
   },
   "author": {
     "name": "afei"
@@ -18,7 +18,8 @@
     "koa-body": "^1.2.1",
     "koa-onerror": "^1.2.1",
     "koa-redis": "^1.0.0",
-    "next-js-core2": "^1.0.15",
+    "next-js-core2": "afeiship/next-js-core2",
+    "next-umd": "github:afeiship/next-umd",
     "node-xhr-mock": "^0.0.1",
     "redis": "^2.6.1",
     "underscore": "^1.8.3",
@@ -60,9 +61,7 @@
     "jade": "^1.11.0",
     "lodash": "~3.10.1",
     "main-bower-files": "^2.9.0",
-    "phantomjs": "~1.9.18",
     "uglify-save-license": "~0.4.1",
-    "wiredep": "~2.2.2",
-    "wrench": "~1.5.8"
+    "wiredep": "~2.2.2"
   }
 }

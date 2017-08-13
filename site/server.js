@@ -25,7 +25,7 @@ module.exports = function (port) {
 
   app.use(business());
 
-  app.use(redis());
+  // app.use(redis());
 
   app.listen(port);
 

@@ -1,12 +1,12 @@
-#next-koa-vue
+# next-koa-vue
 An app page architecture based on next &amp; koa &amp; vue.
 
 
-##editor settings:
+## editor settings:
 + es6 framework env;
 
 
-##config:
+## config:
 + Host:127.0.0.1	www.dev.com
 
 + nginx:
@@ -34,7 +34,7 @@ An app page architecture based on next &amp; koa &amp; vue.
 + gulp
 
 
-##issues:
+## issues:
 + need css autoprefixer       [2016-04-15:ok]
 + svg to font
 + jade-mixin
@@ -43,9 +43,9 @@ An app page architecture based on next &amp; koa &amp; vue.
 + responsive & rem layout     [2016-04-15:ok]
 
 
-##resource:
+## resource:
 + http://mahua.jser.me/
 
-##bug:
+## bug:
 + jade will note sync with jade-watch-dev [2016-04-15 ok]
 + nginx can not download font(.ttf/.woff/...)

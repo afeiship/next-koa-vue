@@ -1,16 +1,16 @@
 (function (nx, global) {
 
-  var rediz = require("redis"),
+  var redis = require("redis"),
     coRedis = require("co-redis");
 
   var Redis = nx.declare({
     methods: {
       init: function (inApp) {
         this._app = inApp;
-        this.create()
+        this.create();
       },
       create: function () {
-        var instance = rediz.createClient(this._app.config.redis);
+        var instance = redis.createClient(this._app.config.redis);
         return coRedis(instance);
       }
     }
