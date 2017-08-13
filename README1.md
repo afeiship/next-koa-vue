@@ -10,10 +10,8 @@ An app page architecture based on next &amp; koa &amp; vue.
 + Host:127.0.0.1	www.dev.com
 
 + nginx:
-> DO NOT USE `~/github/next-koa-vue/dev`
-> PLEASE USE `/Users/feizheng/github/next-koa-vue/dev`
+> DO NOT USE `[WRONG]:~/github/next-koa-vue/dev` INSTEAD OF `[RIGHT]:/Users/feizheng/github/next-koa-vue/dev`
 ```conf
-
   server {
   	listen 		80;
   	server_name 	www.dev.com;
